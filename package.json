@@ -1,5 +1,5 @@
 {
-  "name": "mime-sniff",
+  "name": "file-mime-sniff",
   "version": "0.0.1",
   "description": "Package for mime sniffing files",
   "main": "index.js",
