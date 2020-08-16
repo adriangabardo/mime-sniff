@@ -1,0 +1,63 @@
+<script>
+  function dragstart_handler(ev) {
+    // Add the target element's id to the data transfer object
+    ev.dataTransfer.setData("application/my-app", ev.target.id);
+    ev.dataTransfer.dropEffect = "move";
+  }
+  function dragover_handler(ev) {
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "move";
+  }
+  function drop_handler(ev) {
+    ev.preventDefault();
+    // Get the id of the target and add the moved element to the target's DOM
+    const data = ev.dataTransfer.getData("application/my-app");
+    console.log("ev.dataTransfer", ev.dataTransfer);
+    console.log("data:", data);
+
+    const file = ev.dataTransfer.files[0];
+    console.log("file:", file);
+
+    const reader = new FileReader();
+
+    // Copied from https://stackoverflow.com/a/9458996
+    function _arrayBufferToBase64(buffer) {
+      var binary = "";
+      var bytes = new Uint8Array(buffer);
+      var len = bytes.byteLength;
+      for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      return window.btoa(binary);
+    }
+
+    reader.addEventListener(
+      "load",
+      function () {
+        console.log(reader.result);
+        console.log(_arrayBufferToBase64(reader.result));
+      },
+      false
+    );
+
+    if (file) {
+      reader.readAsArrayBuffer(file);
+    }
+
+    ev.target.appendChild(document.getElementById(data));
+  }
+
+  console.log("i am running");
+</script>
+
+<p id="p1" draggable="true" ondragstart="dragstart_handler(event)">
+  This element is draggable.
+</p>
+<div
+  id="target"
+  ondrop="drop_handler(event)"
+  ondragover="dragover_handler(event)"
+  style="background-color: #eee; width: 100%; height: 200px;"
+>
+  Drop Zone
+</div>
