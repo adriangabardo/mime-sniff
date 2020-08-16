@@ -1,8 +1,13 @@
 {
   "name": "mime-sniff",
   "version": "0.0.1",
-  "description": "",
+  "description": "Package for mime sniffing files",
   "main": "index.js",
+  "homepage": "https://github.com/adriangabardo/mime-sniff",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adriangabardo/mime-sniff.git"
+  },
   "scripts": {
     "start": "npm run build:local && node dist/Samples/sample.js",
     "build:local": "tsc --build tsconfig.local.json",
@@ -10,7 +15,7 @@
     "copy": "copyfiles ./package.json dist && copyfiles README.md dist",
     "test": "jest"
   },
-  "author": "",
+  "author": "Adrian Gabardo",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.10",
