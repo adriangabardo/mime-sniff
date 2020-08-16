@@ -15,7 +15,7 @@ This is more effective than simply reading the file extension, as that can be ea
 ### Import methods
 
 ```TS
-import { validateBySet, possibleMimeMatches } from "../index";
+import { validateBySet, possibleMimeMatches } from "mime-sniff";
 import { base64example } from "./sampleFile";
 
 validateBySet({
@@ -33,7 +33,7 @@ possibleMimeMatches({
 There is absolutely no advantage to doing this, but if classes are your thing go ahead.
 
 ```TS
-import { MimeValidator } from "../index";
+import { MimeValidator } from "mime-sniff";
 import { base64example } from "./sampleFile";
 const validator = new MimeValidator();
 
