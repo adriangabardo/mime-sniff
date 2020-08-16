@@ -1,6 +1,6 @@
 # file-mime-sniff
 
-![NPM Package](https://github.com/adriangabardo/mime-sniff/workflows/NPM%20Package/badge.svg) ![NPM Package Badge](https://img.shields.io/npm/v/file-mime-sniff)
+![NPM Package](https://github.com/adriangabardo/mime-sniff/workflows/NPM%20Package/badge.svg) ![NPM Package Badge Status](https://img.shields.io/npm/v/file-mime-sniff)
 
 This package receives files as base64 encoded strings, then creates a Buffer to read bytes from. With this, you can either specify mime types allowed for the library to validate if the file adheres to them, or simply pass a file so that the library can find possible mime types it might belong to.
 
