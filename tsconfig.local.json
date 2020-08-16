@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "./local"
+  },
+  "extends": "./tsconfig.json",
+  "exclude": ["src/**/*.test.**"]
+}

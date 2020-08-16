@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/sample.js",
+    "start": "npm run build:local && node dist/Samples/sample.js",
+    "build:local": "tsc --build tsconfig.local.json",
+    "build:dist": "tsc --build tsconfig.build.json",
     "test": "jest"
   },
   "author": "",
