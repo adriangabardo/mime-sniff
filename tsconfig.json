@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "declarationMap": true,
+    "declaration": true,
     "sourceMap": true
   },
   "exclude": ["src/**/*.test.**"]
